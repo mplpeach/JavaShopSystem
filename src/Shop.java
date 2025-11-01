@@ -1,7 +1,10 @@
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
 
 public class Shop {
-    Scanner sc = new Scanner(System.in);
+    static Scanner sc = new Scanner(System.in);
+    static List<User>userList = new ArrayList<User>();
 
     public static void main(String[] args) {
         Shop shop = new Shop();
@@ -15,7 +18,7 @@ public class Shop {
     private int showMainMenu() {
         System.out.println("*****欢迎进入mplの电子商城*****");
         System.out.println("\t1.注册");
-        System.out.println("\t2.登");
+        System.out.println("\t2.登录");
         System.out.println("\t3.查看商城");
         System.out.println("\t4.查看已购买的商品");
         System.out.println("\t5.管理员登陆");
@@ -26,9 +29,11 @@ public class Shop {
         return choice;
     }
     private void chooseMenu(int choice, boolean go_on) {
+        User user = new User();
         switch (choice) {
             case 1:
                 System.out.println("您选择的菜单是：注册");
+                user.register();
                 break;
             case 2:
                 System.out.println("您选择的菜单是：登录");
