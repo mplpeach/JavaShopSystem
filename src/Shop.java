@@ -15,7 +15,7 @@ public class Shop {
     private int showMainMenu() {
         System.out.println("*****欢迎进入mplの电子商城*****");
         System.out.println("\t1.注册");
-        System.out.println("\t2.登录");
+        System.out.println("\t2.登");
         System.out.println("\t3.查看商城");
         System.out.println("\t4.查看已购买的商品");
         System.out.println("\t5.管理员登陆");
