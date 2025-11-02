@@ -16,7 +16,7 @@ public class Shop {
     }
 
     private int showMainMenu() {
-        System.out.println("*****欢迎进入mplの电子商城*****");
+        System.out.println("*****欢迎进入喻灵枫の电子商城*****");
         System.out.println("\t1.注册");
         System.out.println("\t2.登录");
         System.out.println("\t3.查看商城");

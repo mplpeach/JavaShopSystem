@@ -19,8 +19,10 @@ public class User {
     }
 
     public void register() {
+        //注册功能
         String username = "";
         String password = "";
+        //用户名注册
         while (true){
             System.out.println("请输入用户名(长度不小于3位)：");
             username = Shop.sc.next();
@@ -33,26 +35,37 @@ public class User {
                     break;
                 }
             }
-            if (flag == false) continue;
+            if (!flag) continue;
             if (username.length() < 3){
                 System.out.println("用户名不得小于三位！");
             }
             else break;
         }
+        //密码注册
         while (true){
             System.out.println("请输入密码(需数字字母组合，长度不小于6位)：");
             password = Shop.sc.next();
             if (password.length() < 6){
                 System.out.println("密码长度不能小于6位，请重新输入！");
+                continue;
             }
             else if (!password.matches(".*[A-Za-z].*") || !password.matches(".*\\d.*")){
                 System.out.println("密码必须同时包含字母与数字，请重新输入！");
+                continue;
             }
-            else break;
+            System.out.println("请再次确认密码");
+            String repassword = Shop.sc.next();
+            if (password.equals(repassword)){
+                this.username = username;
+                this.password = password;
+                Shop.userList.add(this);
+                System.out.println("注册成功！");
+                break;
+            }
+            else {
+                System.out.println("两次输入不一致，请重新输入！");
+                continue;
+            }
         }
-        this.username = username;
-        this.password = password;
-        Shop.userList.add(this);
-        System.out.println("注册成功！");
     }
 }
