@@ -1,6 +1,7 @@
 public class User {
     private String username;
     private String password;
+    public static boolean isLogin = false;
 
     public String getUsername() {
         return username;
@@ -65,6 +66,38 @@ public class User {
             else {
                 System.out.println("两次输入不一致，请重新输入！");
                 continue;
+            }
+        }
+    }
+
+    public void login(){
+        //登录功能
+        String username = "";
+        String password = "";
+        while (true){
+            System.out.print("请输入用户名：");
+            username = Shop.sc.next();
+            System.out.print("请输入密码：");
+            password = Shop.sc.next();
+            boolean name_flag = false;
+            boolean password_flag = false;
+            for (User user : Shop.userList) {
+                if (user.getUsername().equals(username)) {
+                    if (user.getPassword().equals(password)) {
+                        System.out.println("登陆成功！欢迎回来，" + username + "!");
+                        password_flag = true;
+                        isLogin = true;
+                    } else {
+                        System.out.println("用户名或密码错误，请重新尝试！");
+                    }
+                    name_flag = true;
+                    break;
+                }
+            }
+            if (name_flag && password_flag) break;
+            else if (!name_flag) {
+                System.out.println("用户不存在，请先注册！");
+                break;
             }
         }
     }
