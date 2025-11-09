@@ -101,4 +101,23 @@ public class User {
             }
         }
     }
+
+    public void showGoodList() {
+
+    }
+
+    public Good findGoodByID(int id){
+        Good returnGood = null;
+        for (Good good :Shop.goodList){
+            if (good.getId() == id){
+                returnGood =good;
+                break;
+            }
+        }
+        return returnGood;
+    }
+
+    public void showMyGoodList() {
+
+    }
 }

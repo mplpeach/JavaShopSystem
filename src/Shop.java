@@ -5,7 +5,7 @@ import java.util.Scanner;
 public class Shop {
     static Scanner sc = new Scanner(System.in);
     static List<User>userList = new ArrayList<User>();
-
+    static List<Good> goodList = new ArrayList<Good>();
     public static void main(String[] args) {
         Shop shop = new Shop();
         boolean go_on = true;
@@ -41,12 +41,16 @@ public class Shop {
                 break;
             case 3:
                 System.out.println("您选择的菜单是：查看商城");
+                user.showGoodList();
                 break;
             case 4:
                 System.out.println("您选择的菜单是：查看我购买的商品");
+                user.showMyGoodList();
                 break;
             case 5:
                 System.out.println("您选择的菜单是:管理员登录");
+                Admin admin = new Admin();
+                admin.adminLogin();
                 break;
             case 6:
                 System.out.println("谢谢使用，期待与您下次再见^_^");
